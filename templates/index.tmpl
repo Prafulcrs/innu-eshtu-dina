@@ -1,0 +1,47 @@
+{{define "index"}}{{template "head" .}}
+<section class="hero">
+  <h1>How many more days?</h1>
+  <p class="tagline">Bengaluru's public scoreboard of promised-versus-delivered infrastructure. Live counters, sourced dates, plain arithmetic.</p>
+  <div class="stats">
+    <div class="stat"><span class="stat-num">{{.TotProjects}}</span><span class="stat-label">projects tracked</span></div>
+    <div class="stat"><span class="stat-num">{{comma .TotOverdue}}</span><span class="stat-label">combined days past promised deadlines</span></div>
+    {{if .TotCost}}<div class="stat"><span class="stat-num">₹{{commaf .TotCost}}+ cr</span><span class="stat-label">sanctioned cost of tracked projects</span></div>{{end}}
+  </div>
+</section>
+
+<section class="board">
+{{range $i, $p := .Active}}
+  <a class="card" href="/p/{{$p.ID}}/">
+    <div class="card-rank">#{{inc $i}}</div>
+    <div class="card-main">
+      <h2>{{$p.Name}}</h2>
+      <p class="card-agency">{{$p.Agency}} · <span class="badge badge-{{$p.Status}}">{{$p.StatusLabel}}</span></p>
+      <p class="card-promise">{{$p.PromiseLine}}</p>
+    </div>
+    <div class="card-count">
+      <span class="big-num" data-days-from="{{$p.CounterFrom}}">{{comma $p.CounterDays}}</span>
+      <span class="count-label">{{$p.CounterLabel}}</span>
+    </div>
+  </a>
+{{end}}
+</section>
+
+{{if .Done}}
+<section class="finally">
+  <h2>Hall of Finally</h2>
+  <p class="finally-sub">Delivered — late, but delivered. We keep score fairly.</p>
+  {{range .Done}}
+  <a class="card card-done" href="/p/{{.ID}}/">
+    <div class="card-main">
+      <h2>{{.Name}}</h2>
+      <p class="card-agency">{{.Agency}} · <span class="badge badge-completed">{{.StatusLabel}}</span></p>
+    </div>
+    <div class="card-count">
+      <span class="big-num done-num">{{comma .LateDays}}</span>
+      <span class="count-label">days late, but done · {{fdate .CompletedT}}</span>
+    </div>
+  </a>
+  {{end}}
+</section>
+{{end}}
+{{template "foot" .}}{{end}}

@@ -1,0 +1,30 @@
+id: metro-pink-line
+name: Namma Metro Pink Line (Kalena Agrahara–Nagawara)
+agency: BMRCL
+status: crawling
+started: "2017-01-01"
+started_approx: true
+promised:
+  - "2021-12-31"
+  - "2026-12-31"
+summary: >-
+  A 21.4 km, 18-station Phase-2 line — Bengaluru's first major underground
+  stretch — under construction since 2017. Originally part of Phase 2
+  targets around 2021; now expected to open in stages through late 2026
+  at the earliest.
+notes:
+  - The elevated southern section (about 7.5 km, Kalena Agrahara to
+    Tavarekere) was expected around May 2026.
+  - The 13.8 km underground stretch (Dairy Circle to Nagawara) is planned
+    for late 2026, after tunnelling, systems integration and safety
+    approvals.
+  - First rolling stock for the line was still awaited as of 2025.
+  - Deadlines for the line have been revised repeatedly across Phase 2's
+    history.
+sources:
+  - title: "Bengaluru's Metro mess — deadlines and delays (Deccan Herald)"
+    url: https://www.deccanherald.com/amp/story/india/karnataka/bengaluru/bengaluru-s-metro-mess-deadlines-and-delays-3500512
+  - title: "Pink Line expected to open between 2026 and 2027 (Nativeplanet)"
+    url: https://www.nativeplanet.com/news/bengaluru-metro-bengaluru-metros-pink-line-is-expected-to-open-between-2026-2027-020611.html
+  - title: "Namma Metro in 2025 — Yellow Line boost, Pink Line delay (TS2)"
+    url: https://ts2.tech/en/bengalurus-namma-metro-in-2025-yellow-line-boost-pink-line-delay-and-blue-line-push-as-network-targets-175-km-by-2027/

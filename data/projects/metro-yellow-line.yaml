@@ -1,0 +1,25 @@
+id: metro-yellow-line
+name: Namma Metro Yellow Line (RV Road–Bommasandra)
+agency: BMRCL
+status: completed
+started: "2017-03-01"
+started_approx: true
+promised:
+  - "2022-12-31"
+completed: "2025-08-10"
+summary: >-
+  The 19.1 km, 16-station line connecting southern Bengaluru to Electronics
+  City. Initially scheduled to open in December 2022; inaugurated on
+  10 August 2025 — roughly two years and eight months late.
+notes:
+  - Civil work was finished by March 2024, but the opening kept slipping
+    because trains ordered from CRRC in 2019 hadn't been delivered.
+  - Opening dates were announced and missed repeatedly — June 2023,
+    April 2024, July 2024, December 2024 — before the August 2025 launch.
+  - The line opened with a skeleton fleet, running far below its designed
+    frequency.
+sources:
+  - title: "Yellow Line (Namma Metro) — Wikipedia"
+    url: https://en.wikipedia.org/wiki/Yellow_Line_(Namma_Metro)
+  - title: "Further delay for Bangalore metro expansion (International Railway Journal)"
+    url: https://www.railjournal.com/passenger/metros/further-delay-for-bangalore-metro-expansion/

@@ -1,0 +1,50 @@
+{{define "project"}}{{template "head" .}}
+{{with .P}}
+<article class="project">
+  <p class="crumb"><a href="/">← All projects</a></p>
+  <h1>{{.Name}}</h1>
+  <p class="card-agency">{{.Agency}} · <span class="badge badge-{{.Status}}">{{.StatusLabel}}</span></p>
+
+  <div class="hero-counter">
+    {{if eq .Status "completed"}}
+    <span class="big-num done-num">{{comma .LateDays}}</span>
+    <span class="count-label">days past the first promised deadline — but delivered, on {{fdate .CompletedT}}</span>
+    {{else}}
+    <span class="big-num ticker" data-ticker-from="{{.CounterFrom}}">{{comma .CounterDays}} days</span>
+    <span class="count-label">{{.CounterLabel}} — and counting</span>
+    {{end}}
+  </div>
+
+  <p class="summary">{{.Summary}}</p>
+
+  <h2>The promise timeline</h2>
+  <ul class="timeline">
+    {{range .Timeline}}
+    <li class="tl {{.Class}}">
+      <span class="tl-date">{{.Date}}</span>
+      <span class="tl-label">{{.Label}}</span>
+      {{if .Detail}}<span class="tl-detail">{{.Detail}}</span>{{end}}
+    </li>
+    {{end}}
+  </ul>
+
+  {{if .Notes}}
+  <h2>What happened</h2>
+  <ul class="notes">
+    {{range .Notes}}<li>{{.}}</li>{{end}}
+  </ul>
+  {{end}}
+
+  <div class="facts">
+    <div><span class="fact-label">Agency</span><span class="fact-val">{{.Agency}}</span></div>
+    <div><span class="fact-label">Began</span><span class="fact-val">{{fdate .StartedT}}{{if .StartedApprox}} (approx.){{end}}</span></div>
+    {{if .CostCr}}<div><span class="fact-label">Sanctioned cost</span><span class="fact-val">₹{{commaf .CostCr}} crore</span></div>{{end}}
+  </div>
+
+  <h2>Sources</h2>
+  <ul class="sources">
+    {{range .Sources}}<li><a href="{{.URL}}" rel="nofollow noopener" target="_blank">{{.Title}}</a></li>{{end}}
+  </ul>
+</article>
+{{end}}
+{{template "foot" .}}{{end}}

@@ -1,0 +1,38 @@
+{{define "methodology"}}{{template "head" .}}
+<article class="project prose">
+  <p class="crumb"><a href="/">← All projects</a></p>
+  <h1>Methodology</h1>
+
+  <h2>What this site is</h2>
+  <p>A scoreboard. Each tracked project has dates — when it began, when completion was promised, when promises were revised, and (sometimes) when it was delivered. The counters are plain arithmetic on those dates, computed in Indian Standard Time. Nothing here is an opinion.</p>
+
+  <h2>How counters are computed</h2>
+  <ul class="notes">
+    <li><strong>Days past first promised deadline</strong> — days elapsed since the earliest publicly promised completion date, for projects still unfinished past that date.</li>
+    <li><strong>Days since the project began</strong> — used where no promised deadline has passed yet (or where the scandal is that nothing has started at all).</li>
+    <li><strong>Days late, but done</strong> — for delivered projects: days between the first promised deadline and the actual opening.</li>
+  </ul>
+
+  <h2>Sourcing rules</h2>
+  <ul class="notes">
+    <li>Every date must trace to a published news report or a government document, linked on the project page.</li>
+    <li>No source, no listing. Projects we cannot source to current reporting are left out — even famous ones.</li>
+    <li>Where an exact day is not public (e.g. "work began in May 2017"), we use the first of the stated month and mark it <em>approx.</em> Approximations always favour the agency (counters start later, not earlier).</li>
+    <li>We name agencies and projects, never individuals.</li>
+  </ul>
+
+  <h2>Status labels</h2>
+  <ul class="notes">
+    <li><strong>Stalled</strong> — no meaningful construction activity.</li>
+    <li><strong>Crawling</strong> — work happening, far behind promised pace.</li>
+    <li><strong>Work resumed</strong> — recently restarted after a stall.</li>
+    <li><strong>Done. Finally.</strong> — delivered. Moved to the Hall of Finally, where we say so plainly. Fair is fair.</li>
+  </ul>
+
+  <h2>Corrections</h2>
+  <p>If any date, amount or fact here is wrong, open an issue on GitHub with a source. We correct within 48 hours and note the correction on the project page.</p>
+
+  <h2>Contribute a project</h2>
+  <p>The entire dataset is a folder of YAML files in a public repository. To add a project: copy an existing file, fill in sourced dates, open a pull request. The bar: every date must have a link.</p>
+</article>
+{{template "foot" .}}{{end}}

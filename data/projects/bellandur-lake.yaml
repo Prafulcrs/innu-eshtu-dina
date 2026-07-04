@@ -1,0 +1,28 @@
+id: bellandur-lake
+name: Bellandur Lake Rejuvenation
+agency: BDA
+status: crawling
+started: "2017-04-01"
+started_approx: true
+promised:
+  - "2020-03-31"
+  - "2021-12-31"
+  - "2026-03-31"
+summary: >-
+  Bengaluru's largest lake (890 acres) — infamous for toxic froth and for
+  catching fire — was ordered cleaned up by the National Green Tribunal,
+  with desilting and rejuvenation to finish by early 2020. Six years past
+  that order, desilting is still incomplete.
+notes:
+  - The NGT directed completion of desilting and rejuvenation by early
+    2020, later extended to 2021.
+  - The state approved ₹80 crore in 2025 to resume stalled desilting work.
+  - The latest official deadline of March 2026 has passed with waterlogged
+    conditions, slow desilting and funding delays cited.
+  - Desilting of the 890-acre lakebed remains the project's biggest
+    challenge.
+sources:
+  - title: "New deadline for Bellandur lake rejuvenation set to March 2026 (Deccan Herald)"
+    url: https://www.deccanherald.com/india/karnataka/bengaluru/bengaluru-new-deadline-for-bellandur-lake-rejuvenation-set-to-march-2026-3800294
+  - title: "Govt pledges ₹80 crore for Bellandur lake rejuvenation (Deccan Herald)"
+    url: https://www.deccanherald.com/india/karnataka/bengaluru/govt-pledges-rs-80-cr-for-bellandur-lake-rejuvenation-3596042

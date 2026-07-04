@@ -1,0 +1,30 @@
+id: suburban-rail
+name: Bengaluru Suburban Rail Project (BSRP)
+agency: K-RIDE
+status: crawling
+started: "2020-10-01"
+promised:
+  - "2026-10-31"
+  - "2030-03-31"
+cost_sanctioned_cr: 15767
+summary: >-
+  A 148 km, 4-corridor, 58-station commuter rail network sanctioned in
+  October 2020 with an October 2026 deadline — designed to carry nearly
+  20 lakh passengers a day. The completion target has been pushed to
+  March 2030.
+notes:
+  - Only two of four corridors (Mallige and Kanaka lines) have started
+    construction.
+  - L&T terminated both its BSRP contracts on 31 July 2025, blaming delays
+    in land handover by K-RIDE.
+  - The Mallige line (28.72 km), earlier set for end-2026, has been pushed
+    to March 2027.
+  - Full-network completion is now officially targeted for March 2030 —
+    about three and a half years past the sanctioned deadline.
+sources:
+  - title: "BSRP completion deadline extended to March 2030 (Metro Rail Today)"
+    url: https://metrorailtoday.com/news/bengaluru-suburban-rail-project-completion-deadline-extended-to-march-2030
+  - title: "BSRP faces delays, 2026 deadline unlikely (Construction World)"
+    url: https://www.constructionworld.in/transport-infrastructure/metro-rail-and-railways-infrastructure/bengaluru-suburban-rail-project-faces-delays-2026-deadline-unlikely/72354
+  - title: "L&T terminates BSRP contracts, blames K-RIDE over land delay (Asianet Newsable)"
+    url: https://newsable.asianetnews.com/karnataka-news/bengaluru-suburban-rail-lt-terminates-bsrp-contracts-blames-land-delay-articleshow-pi85cxu
