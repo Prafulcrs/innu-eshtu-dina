@@ -98,7 +98,7 @@ func main() {
 	now := time.Now().In(ist)
 	baseURL := os.Getenv("BASE_URL")
 	if baseURL == "" {
-		baseURL = "https://innu-eshtu-dina.pages.dev"
+		baseURL = "https://innu-eshtu-dina.vercel.app"
 	}
 
 	projects, err := loadProjects("data/projects", now)

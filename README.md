@@ -49,12 +49,18 @@ sources:
     url: https://...
 ```
 
-## Deploy
+## Deploy (Vercel)
 
-GitHub Actions builds daily at 02:00 IST and deploys `public/` to Cloudflare
-Pages. One-time setup: create a Pages project named `innu-eshtu-dina`, add
-`CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` repo secrets, and set
-`BASE_URL` in `.github/workflows/build.yml` to your domain.
+1. Push this repo to GitHub.
+2. Import it at [vercel.com/new](https://vercel.com/new) — framework
+   "Other". `vercel.json` already sets the build command (`go run .`) and
+   output directory (`public`). Every push to `main` deploys.
+3. Keep share images fresh: in the Vercel project, create a Deploy Hook
+   (Settings → Git → Deploy Hooks), add its URL as the `VERCEL_DEPLOY_HOOK`
+   repo secret on GitHub. The included workflow triggers a rebuild daily at
+   02:00 IST so OG day-counts stay current.
+4. Custom domain: add it in Vercel, then set `BASE_URL` (Vercel project
+   env var) to the domain so OG image URLs match.
 
 ## Corrections
 

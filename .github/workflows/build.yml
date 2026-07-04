@@ -1,33 +1,22 @@
-name: build-and-deploy
+name: daily-refresh
+
+# Vercel's git integration deploys on every push to main.
+# This workflow exists only to trigger a fresh build once a day,
+# so the day-counts baked into OG share images stay current.
+#
+# One-time setup:
+#   1. Import the GitHub repo at vercel.com/new (framework: Other).
+#   2. Vercel project → Settings → Git → Deploy Hooks → create one for main.
+#   3. Add the hook URL as repo secret VERCEL_DEPLOY_HOOK.
 
 on:
-  push:
-    branches: [main]
   schedule:
-    - cron: "30 20 * * *" # 02:00 IST daily — refreshes day-counts baked into OG images
+    - cron: "30 20 * * *" # 02:00 IST
   workflow_dispatch:
 
 jobs:
-  build:
+  redeploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-go@v5
-        with:
-          go-version: "1.23"
-
-      - name: Generate site
-        run: go run .
-        env:
-          BASE_URL: https://innu-eshtu-dina.pages.dev
-
-      # One-time setup:
-      #   1. Create a Cloudflare Pages project named "innu-eshtu-dina" (direct upload).
-      #   2. Add repo secrets CLOUDFLARE_API_TOKEN (Pages:Edit) and CLOUDFLARE_ACCOUNT_ID.
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy public --project-name=innu-eshtu-dina
+      - name: Trigger Vercel rebuild
+        run: curl -sf -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"
