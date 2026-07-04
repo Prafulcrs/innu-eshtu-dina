@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "go run .",
+  "buildCommand": "curl -sL https://go.dev/dl/go1.23.4.linux-amd64.tar.gz | tar -xz && ./go/bin/go run .",
   "outputDirectory": "public",
   "framework": null
 }
