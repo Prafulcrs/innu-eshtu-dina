@@ -1,0 +1,31 @@
+id: gruha-lakshmi-arrears
+kind: promise
+name: Gruha Lakshmi — the unpaid instalments
+agency: Govt of Karnataka
+status: crawling
+started: "2023-08-01"
+started_approx: true
+promised:
+  - "2025-02-28"
+summary: >-
+  The flagship guarantee promises ₹2,000 every month to 1.28 crore women
+  across Karnataka, Bengaluru included. Instalments stopped arriving from
+  February 2025 — roughly ₹5,000 crore in arrears — and by May 2026 the
+  Karnataka High Court had issued notice to the state over the
+  non-disbursement. The counter runs from the first unpaid instalment.
+notes:
+  - Beneficiaries reported receiving no instalments from February 2025
+    through May 2026.
+  - The two withheld instalments for February and March 2025 alone amount
+    to about ₹5,000 crore across 1.28 crore beneficiaries.
+  - The Karnataka High Court issued notice to the state government on
+    21 May 2026 on a PIL seeking release of pending payments.
+  - Funds were allocated in the state budget; coverage questions why the
+    money hasn't reached beneficiary accounts.
+sources:
+  - title: "Karnataka HC issues notice to state over pending Gruhalakshmi payments (The News Minute)"
+    url: https://www.thenewsminute.com/karnataka/karnataka-high-court-issues-notice-to-state-over-pending-gruhalakshmi-payments
+  - title: "HC orders notice in PIL over non-disbursement for two months (Deccan Herald)"
+    url: https://www.deccanherald.com/amp/story/india/karnataka/gruha-lakshmi-karnataka-high-court-orders-notice-in-pil-over-non-disbursement-of-money-for-two-months-4011731
+  - title: "Gruha Lakshmi beneficiaries disappointed over delay in payouts (IANS)"
+    url: https://ianslive.in/karnataka-gruha-lakshmi-beneficiaries-disappointed-over-delay-in-payouts--20251224165404
