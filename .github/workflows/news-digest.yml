@@ -1,0 +1,33 @@
+name: news-digest
+
+# Mondays 09:00 IST: opens a GitHub issue with the week's headlines for
+# every tracked project, so stale YAMLs get noticed.
+
+on:
+  schedule:
+    - cron: "30 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build digest from Google News RSS
+        run: python3 .github/scripts/digest.py
+
+      - name: Open digest issue (only if there are headlines)
+        run: |
+          if grep -q '^###' digest.md; then
+            gh issue create --repo "$GITHUB_REPOSITORY" \
+              --title "News digest $(date +%F)" --body-file digest.md
+          else
+            echo "No headlines this week."
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}

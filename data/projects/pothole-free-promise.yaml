@@ -1,0 +1,35 @@
+id: pothole-free-promise
+kind: promise
+name: '"Pothole-free Bengaluru" — the 2025 promise'
+agency: Govt of Karnataka / GBA
+status: crawling
+started: "2025-09-01"
+started_approx: true
+promised:
+  - "2025-09-30"
+  - "2025-10-28"
+  - "2025-11-30"
+summary: >-
+  In September 2025 the government promised a pothole-free Bengaluru,
+  with the Chief Minister setting a September deadline across the five
+  corporations and the Deputy CM setting November for contractors. An
+  additional "fill every pothole in one week" ultimatum came on
+  21 October. The roads answered for themselves.
+notes:
+  - The Chief Minister set the pothole-repair deadline across the five
+    corporation limits for September 2025; deadline dates here are
+    end-of-month approximations of stated targets.
+  - On 21 October 2025, with roads still riddled, the CM ordered all
+    potholes filled within a week amid a public spat with industrialists.
+  - The Deputy CM set November 2025 as the contractors' deadline and said
+    over 10,000 potholes had been filled.
+  - Reports through the period documented potholes from Kengeri and
+    Kanakapura Road to Koramangala, HSR Layout, Bellandur, Electronic City
+    and Sarjapur.
+sources:
+  - title: "Pothole-free Bengaluru deadline nears, but roads remain in ruins (The South First)"
+    url: https://thesouthfirst.com/karnataka/karnataka-governments-pothole-free-bengaluru-deadline-nears-but-roads-remain-in-ruins/
+  - title: "Pothole-free in a week? CM orders urgent fix (The Week, Oct 2025)"
+    url: https://www.theweek.in/news/india/2025/10/21/bengaluru-roads-to-be-pothole-free-in-a-week-karnataka-cm-siddaramaiah-orders-urgent-fix-amid-tiff-with-industrialists.html
+  - title: "Bengaluru sets November deadline for citywide road repairs (CarToq)"
+    url: https://www.cartoq.com/car-life/bengaluru-sets-november-deadline-for-citywide-road-repairs/

@@ -36,6 +36,7 @@ type Source struct {
 
 type Project struct {
 	ID            string   `yaml:"id"`
+	Kind          string   `yaml:"kind"` // "" (project) or "promise"
 	Name          string   `yaml:"name"`
 	Agency        string   `yaml:"agency"`
 	Status        string   `yaml:"status"`
@@ -88,6 +89,7 @@ type Page struct {
 
 	// index
 	Active      []*Project
+	Promises    []*Project
 	Done        []*Project
 	TotProjects int
 	TotOverdue  int
@@ -229,6 +231,9 @@ func derive(p *Project, now time.Time) error {
 		p.CounterFrom = p.Started
 		p.CounterDays = daysBetween(p.StartedT, now)
 		p.CounterLabel = "days since the project began"
+		if p.Kind == "promise" {
+			p.CounterLabel = "days since the promise was made"
+		}
 		if len(p.PromisedT) > 0 {
 			p.PromiseLine = fmt.Sprintf("Announced %s · current target %s",
 				fmonth(p.StartedT), fmonth(p.PromisedT[len(p.PromisedT)-1]))
@@ -368,7 +373,7 @@ func build(projects []*Project, baseURL string, now time.Time) error {
 		return err
 	}
 
-	var active, done []*Project
+	var active, promises, done []*Project
 	totOverdue, totCost := 0, 0.0
 	for _, p := range projects {
 		totCost += p.CostCr
@@ -377,12 +382,17 @@ func build(projects []*Project, baseURL string, now time.Time) error {
 			totOverdue += p.LateDays
 			continue
 		}
-		active = append(active, p)
 		if p.CounterLabel == "days past the first promised deadline" {
 			totOverdue += p.CounterDays
 		}
+		if p.Kind == "promise" {
+			promises = append(promises, p)
+			continue
+		}
+		active = append(active, p)
 	}
 	sort.Slice(active, func(i, j int) bool { return active[i].CounterDays > active[j].CounterDays })
+	sort.Slice(promises, func(i, j int) bool { return promises[i].CounterDays > promises[j].CounterDays })
 	sort.Slice(done, func(i, j int) bool { return done[i].LateDays > done[j].LateDays })
 
 	render := func(outPath, tmplName string, page Page) error {
@@ -430,7 +440,7 @@ func build(projects []*Project, baseURL string, now time.Time) error {
 		Title:   "innu eshtu dina? — Bengaluru's infrastructure scoreboard",
 		Desc:    fmt.Sprintf("%d Bengaluru projects, %s combined days past promised deadlines. Live counters, sourced dates, plain arithmetic.", len(projects), comma(totOverdue)),
 		OGImage: baseURL + "/og/site.png",
-		Year:    year, Active: active, Done: done,
+		Year:    year, Active: active, Promises: promises, Done: done,
 		TotProjects: len(projects), TotOverdue: totOverdue, TotCost: totCost,
 	}); err != nil {
 		return err

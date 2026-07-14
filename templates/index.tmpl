@@ -3,7 +3,7 @@
   <h1>How many more days?</h1>
   <p class="tagline">Bengaluru's public scoreboard of promised-versus-delivered infrastructure. Live counters, sourced dates, plain arithmetic.</p>
   <div class="stats">
-    <div class="stat"><span class="stat-num">{{.TotProjects}}</span><span class="stat-label">projects tracked</span></div>
+    <div class="stat"><span class="stat-num">{{.TotProjects}}</span><span class="stat-label">projects &amp; promises tracked</span></div>
     <div class="stat"><span class="stat-num">{{comma .TotOverdue}}</span><span class="stat-label">combined days past promised deadlines</span></div>
     {{if .TotCost}}<div class="stat"><span class="stat-num">₹{{commaf .TotCost}}+ cr</span><span class="stat-label">sanctioned cost of tracked projects</span></div>{{end}}
   </div>
@@ -25,6 +25,26 @@
   </a>
 {{end}}
 </section>
+
+{{if .Promises}}
+<section class="finally promises">
+  <h2>The word given</h2>
+  <p class="finally-sub">Government promises, logged the day they're made. The clock does the rest.</p>
+  {{range .Promises}}
+  <a class="card" href="/p/{{.ID}}/">
+    <div class="card-main">
+      <h2>{{.Name}}</h2>
+      <p class="card-agency">{{.Agency}} · <span class="badge badge-{{.Status}}">{{.StatusLabel}}</span></p>
+      <p class="card-promise">{{.PromiseLine}}</p>
+    </div>
+    <div class="card-count">
+      <span class="big-num" data-days-from="{{.CounterFrom}}">{{comma .CounterDays}}</span>
+      <span class="count-label">{{.CounterLabel}}</span>
+    </div>
+  </a>
+  {{end}}
+</section>
+{{end}}
 
 {{if .Done}}
 <section class="finally">
