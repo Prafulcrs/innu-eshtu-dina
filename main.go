@@ -74,6 +74,16 @@ type ChartDot struct {
 	Label string
 }
 
+type Announcement struct {
+	Date   string `yaml:"date"`
+	Title  string `yaml:"title"`
+	Agency string `yaml:"agency"`
+	Detail string `yaml:"detail"`
+	Link   string `yaml:"link"`
+	Source Source `yaml:"source"`
+	DateT  time.Time
+}
+
 type TimelineRow struct {
 	Date   string
 	Label  string
@@ -98,6 +108,9 @@ type Page struct {
 
 	// project page
 	P *Project
+
+	// announcements page
+	Announcements []Announcement
 }
 
 var statusLabels = map[string]string{
@@ -459,6 +472,28 @@ func build(projects []*Project, baseURL string, now time.Time) error {
 		if err := drawProjectOG(p, filepath.Join("public/og", p.ID+".png")); err != nil {
 			return err
 		}
+	}
+
+	// announcements log
+	var anns []Announcement
+	if raw, err := os.ReadFile("data/announcements.yaml"); err == nil {
+		if err := yaml.Unmarshal(raw, &anns); err != nil {
+			return fmt.Errorf("announcements.yaml: %w", err)
+		}
+		for i := range anns {
+			if anns[i].DateT, err = mustDate(anns[i].Date); err != nil {
+				return fmt.Errorf("announcements.yaml %q: %w", anns[i].Title, err)
+			}
+		}
+		sort.Slice(anns, func(i, j int) bool { return anns[i].DateT.After(anns[j].DateT) })
+	}
+	if err := render("public/announcements/index.html", "announcements", Page{
+		Title:   "Announcements — innu eshtu dina?",
+		Desc:    "A neutral, dated log of government announcements affecting Bengaluru. Each entry sourced. The clock starts here.",
+		OGImage: baseURL + "/og/site.png",
+		Year:    year, Announcements: anns,
+	}); err != nil {
+		return err
 	}
 
 	// methodology

@@ -1,0 +1,24 @@
+{{define "announcements"}}{{template "head" .}}
+<article class="project">
+  <p class="crumb"><a href="/">← All projects</a></p>
+  <h1>Announcements</h1>
+  <p class="tagline">A dated log of what the government announces for Bengaluru — schemes, projects, targets. No commentary. When an announcement stalls, it graduates to the scoreboard.</p>
+
+  <ul class="timeline annlog">
+    {{range .Announcements}}
+    <li class="tl">
+      <span class="tl-date">{{fdate .DateT}}</span>
+      <span class="tl-label">{{.Title}}</span>
+      <span class="tl-detail">{{.Agency}} — {{.Detail}}
+        <a href="{{.Source.URL}}" rel="nofollow noopener" target="_blank">[{{.Source.Title}}]</a>
+        {{if .Link}}· <a href="{{.Link}}">tracked on the scoreboard →</a>{{end}}
+      </span>
+    </li>
+    {{end}}
+  </ul>
+
+  <p class="finally-sub">Know an announcement we missed?
+    <a href="https://github.com/Prafulcrs/innu-eshtu-dina/issues/new?template=suggest-project.yml">Send it with a source.</a>
+  </p>
+</article>
+{{template "foot" .}}{{end}}

@@ -18,6 +18,7 @@
     "What happened": "ಏನಾಯ್ತು",
     "Sources": "ಮೂಲಗಳು",
     "Methodology": "ವಿಧಾನ",
+    "Announcements": "ಘೋಷಣೆಗಳು",
     "Suggest a project": "ಯೋಜನೆ ಸೂಚಿಸಿ",
     "Stalled": "ಸ್ಥಗಿತ",
     "Crawling": "ಆಮೆಗತಿ",

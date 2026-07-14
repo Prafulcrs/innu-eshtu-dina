@@ -1,0 +1,58 @@
+# Neutral log of government announcements affecting Bengaluru.
+# Newest first on the site (sorted by date automatically).
+# If an announcement later stalls, it graduates to the scoreboard —
+# add a project/promise YAML and set `link` here.
+
+- date: "2026-05-23"
+  title: Adani lowest bidder for Hebbal–Silk Board tunnel at ₹22,267 crore
+  agency: B-SMILE
+  detail: The lone L1 bid came in about ₹4,600 crore above the government's own estimate; cabinet decision pending.
+  link: /p/tunnel-road/
+  source:
+    title: PropNewz, May 2026
+    url: https://www.propnewz.com/blog/bengaluru-tunnel-road-hebbal-silk-board-adani-22267-cr-bid-buyer-impact-2026-05-23
+
+- date: "2026-05-01"
+  title: GBA sets October 2026 target for Ejipura flyover
+  agency: Greater Bengaluru Authority
+  detail: New target announced after St John's Hospital land was resolved; March and June 2026 deadlines had already been missed.
+  link: /p/ejipura-flyover/
+  source:
+    title: Deccan Herald, May 2026
+    url: https://www.deccanherald.com/india/karnataka/bengaluru/greater-bengaluru-authority-sets-october-target-for-ejipura-flyover-3996382
+
+- date: "2026-02-15"
+  title: BDA told to clear Bellandur and Varthur silt "on priority"
+  agency: Bengaluru East City Corporation / BDA
+  detail: Corporation commissioner's directive comes six years after the NGT's original desilting deadline.
+  link: /p/varthur-lake/
+  source:
+    title: Deccan Herald, Feb 2026
+    url: https://www.deccanherald.com/india/karnataka/bengaluru/bengaluru-east-city-corporation-reviews-bellandur-varthur-lakes-3894056
+
+- date: "2026-01-15"
+  title: Cabinet approves higher land payouts for Peripheral Ring Road
+  agency: Govt of Karnataka / BDA
+  detail: Revised compensation options (2–3x guidance value, TDR, enhanced FAR) for 948 acres; over 600 landowners consented by early 2026.
+  link: /p/peripheral-ring-road/
+  source:
+    title: TalkingLands, 2026
+    url: https://www.talkinglands.com/blogs/purpose-of-peripheral-ring-road-in-bangalore
+
+- date: "2026-01-03"
+  title: GBA claims 10 flyovers and underpasses will be ready in 2026
+  agency: Greater Bengaluru Authority
+  detail: Covers 10 of 12 ongoing structures, including projects started in 2020 that have missed multiple deadlines.
+  link: /p/gba-2026-flyovers/
+  source:
+    title: News Karnataka, Jan 2026
+    url: https://newskarnataka.com/bengaluru/gba-claims-10-major-flyovers-and-underpasses-in-bengaluru-to-be-ready-in-2026/03012026
+
+- date: "2025-05-15"
+  title: Sky deck relocated to site near Kengeri
+  agency: Govt of Karnataka
+  detail: Original Hemmigepura site dropped over airport height limits and NICE land; new site near NICE Road agreed with city MLAs.
+  link: /p/sky-deck/
+  source:
+    title: Deccan Herald, 2025
+    url: https://www.deccanherald.com/india/karnataka/bengaluru/sky-deck-gets-new-location-near-kengeri-3556236
