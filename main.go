@@ -102,6 +102,7 @@ var statusLabels = map[string]string{
 	"stalled":   "Stalled",
 	"crawling":  "Crawling",
 	"resumed":   "Work resumed",
+	"watching":  "On the clock", // fresh announcement — we log the promise the day it's made
 	"completed": "Done. Finally.",
 }
 

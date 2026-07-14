@@ -80,6 +80,7 @@ main { max-width: 880px; margin: 0 auto; padding: 0 20px 60px; }
 .badge-crawling { background: rgba(210, 153, 34, 0.15); color: var(--orange); }
 .badge-resumed { background: rgba(88, 166, 255, 0.15); color: var(--blue); }
 .badge-completed { background: rgba(63, 185, 80, 0.15); color: var(--green); }
+.badge-watching { background: rgba(230, 237, 243, 0.1); color: var(--text); }
 
 /* hall of finally */
 .finally { margin-top: 48px; }
