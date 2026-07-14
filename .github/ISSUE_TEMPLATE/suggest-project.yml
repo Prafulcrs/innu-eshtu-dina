@@ -1,0 +1,47 @@
+name: Suggest a project
+description: Nominate a stalled Bengaluru project for the scoreboard
+title: "[Project] "
+labels: [suggestion]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Project name
+      placeholder: e.g. Hennur Flyover
+    validations:
+      required: true
+  - type: input
+    id: agency
+    attributes:
+      label: Agency
+      placeholder: BBMP / BDA / BMRCL / K-RIDE / BWSSB
+    validations:
+      required: true
+  - type: input
+    id: started
+    attributes:
+      label: When did it begin? (with source link)
+      placeholder: "May 2017 — https://..."
+    validations:
+      required: true
+  - type: textarea
+    id: promises
+    attributes:
+      label: Promised completion dates (each with a source link)
+      placeholder: |
+        Dec 2019 — https://...
+        Mar 2022 — https://...
+    validations:
+      required: true
+  - type: textarea
+    id: status
+    attributes:
+      label: Current status (with a recent source)
+      placeholder: "Still incomplete as of Jun 2026 — https://..."
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        **The bar: every date needs a link to a news report or government document.
+        No source, no listing.** We respond within 48 hours.

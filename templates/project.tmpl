@@ -18,6 +18,11 @@
   <p class="summary">{{.Summary}}</p>
 
   <h2>The promise timeline</h2>
+  <svg class="drift" viewBox="0 0 1000 60" role="img" aria-label="Promise drift: each dot is a promised completion date">
+    <line class="axis" x1="20" y1="30" x2="980" y2="30"/>
+    <line class="today-tick" x1="{{.ChartToday}}" y1="8" x2="{{.ChartToday}}" y2="52"/>
+    {{range .ChartDots}}<circle class="{{.Class}}" cx="{{.X}}" cy="30" r="9"><title>{{.Label}}</title></circle>{{end}}
+  </svg>
   <ul class="timeline">
     {{range .Timeline}}
     <li class="tl {{.Class}}">

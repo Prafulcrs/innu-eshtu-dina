@@ -4,6 +4,7 @@ agency: BDA
 status: stalled
 started: "2007-01-01"
 started_approx: true
+location: { lat: 13.1350, lng: 77.6050 }
 promised:
   - "2027-12-31"
 summary: >-

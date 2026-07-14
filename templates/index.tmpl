@@ -44,4 +44,25 @@
   {{end}}
 </section>
 {{end}}
+
+<section class="mapsec">
+  <h2>Where the delays live</h2>
+  <p class="finally-sub">Approximate locations — corridors and networks shown as single points.</p>
+  <div id="map"></div>
+</section>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+var projects = {{.MapJS}};
+var map = L.map('map', {scrollWheelZoom: false}).setView([12.9716, 77.5946], 11);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+projects.forEach(function (p) {
+  L.marker([p.lat, p.lng]).addTo(map).bindPopup(
+    '<a href="/p/' + p.id + '/"><strong>' + p.name + '</strong></a><br>' +
+    p.days.toLocaleString('en-IN') + ' ' + p.label
+  );
+});
+</script>
 {{template "foot" .}}{{end}}

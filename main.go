@@ -4,6 +4,7 @@ package main
 
 import (
 	"embed"
+	"encoding/json"
 	"flag"
 	"fmt"
 	"html/template"
@@ -46,6 +47,10 @@ type Project struct {
 	Summary       string   `yaml:"summary"`
 	Notes         []string `yaml:"notes"`
 	Sources       []Source `yaml:"sources"`
+	Location      struct {
+		Lat float64 `yaml:"lat"`
+		Lng float64 `yaml:"lng"`
+	} `yaml:"location"`
 
 	// derived
 	StartedT     time.Time
@@ -58,6 +63,14 @@ type Project struct {
 	PromiseLine  string
 	LateDays     int // completed projects: days past first promise
 	Timeline     []TimelineRow
+	ChartDots    []ChartDot
+	ChartToday   float64
+}
+
+type ChartDot struct {
+	X     float64
+	Class string
+	Label string
 }
 
 type TimelineRow struct {
@@ -79,6 +92,7 @@ type Page struct {
 	TotProjects int
 	TotOverdue  int
 	TotCost     float64
+	MapJS       template.JS
 
 	// project page
 	P *Project
@@ -259,6 +273,33 @@ func derive(p *Project, now time.Time) error {
 			Detail: fmt.Sprintf("%s days after the first promised deadline", comma(p.LateDays)), Class: "done",
 		})
 	}
+
+	// promise-drift strip: dots on a time axis from start to the latest known date
+	end := now
+	if len(p.PromisedT) > 0 {
+		if last := p.PromisedT[len(p.PromisedT)-1]; last.After(end) {
+			end = last
+		}
+	}
+	if !p.CompletedT.IsZero() && p.CompletedT.After(end) {
+		end = p.CompletedT
+	}
+	span := end.Sub(p.StartedT).Seconds()
+	xpos := func(t time.Time) float64 {
+		return 20 + 960*t.Sub(p.StartedT).Seconds()/span
+	}
+	p.ChartToday = xpos(now)
+	p.ChartDots = append(p.ChartDots, ChartDot{X: 20, Class: "dot-start", Label: "Began " + p.StartedT.Format("Jan 2006")})
+	for _, t := range p.PromisedT {
+		class := "dot-target"
+		if t.Before(now) || p.Status == "completed" {
+			class = "dot-missed"
+		}
+		p.ChartDots = append(p.ChartDots, ChartDot{X: xpos(t), Class: class, Label: "Promised " + t.Format("Jan 2006")})
+	}
+	if p.Status == "completed" {
+		p.ChartDots = append(p.ChartDots, ChartDot{X: xpos(p.CompletedT), Class: "dot-done", Label: "Opened " + p.CompletedT.Format("Jan 2006")})
+	}
 	return nil
 }
 
@@ -357,8 +398,34 @@ func build(projects []*Project, baseURL string, now time.Time) error {
 
 	year := now.Year()
 
+	// map markers for the homepage
+	type marker struct {
+		ID    string  `json:"id"`
+		Name  string  `json:"name"`
+		Lat   float64 `json:"lat"`
+		Lng   float64 `json:"lng"`
+		Days  int     `json:"days"`
+		Label string  `json:"label"`
+	}
+	var markers []marker
+	for _, p := range projects {
+		if p.Location.Lat == 0 {
+			continue
+		}
+		days, label := p.CounterDays, p.CounterLabel
+		if p.Status == "completed" {
+			days, label = p.LateDays, "days late, but done"
+		}
+		markers = append(markers, marker{p.ID, p.Name, p.Location.Lat, p.Location.Lng, days, label})
+	}
+	mapJSON, err := json.Marshal(markers)
+	if err != nil {
+		return err
+	}
+
 	// index
 	if err := render("public/index.html", "index", Page{
+		MapJS: template.JS(mapJSON),
 		Title:   "innu eshtu dina? — Bengaluru's infrastructure scoreboard",
 		Desc:    fmt.Sprintf("%d Bengaluru projects, %s combined days past promised deadlines. Live counters, sourced dates, plain arithmetic.", len(projects), comma(totOverdue)),
 		OGImage: baseURL + "/og/site.png",

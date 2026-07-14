@@ -1,0 +1,21 @@
+name: Report an error
+description: A date, amount or fact on the site is wrong
+title: "[Correction] "
+labels: [correction]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Which page?
+      placeholder: https://innu-eshtu-dina.vercel.app/p/ejipura-flyover/
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What's wrong, and what's correct? (with a source link)
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: "Corrections are answered within 48 hours."

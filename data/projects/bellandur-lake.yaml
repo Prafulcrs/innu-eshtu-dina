@@ -4,6 +4,7 @@ agency: BDA
 status: crawling
 started: "2017-04-01"
 started_approx: true
+location: { lat: 12.9365, lng: 77.6680 }
 promised:
   - "2020-03-31"
   - "2021-12-31"

@@ -32,7 +32,7 @@ main { max-width: 880px; margin: 0 auto; padding: 0 20px 60px; }
 .brand { display: flex; flex-direction: column; line-height: 1.2; }
 .brand-kn { font-size: 1.25rem; font-weight: 700; color: var(--accent); }
 .brand-en { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
-.site-header nav a { color: var(--muted); font-size: 0.9rem; }
+.site-header nav a { color: var(--muted); font-size: 0.9rem; margin-left: 16px; }
 .site-header nav a:hover { color: var(--text); }
 
 /* hero */
@@ -140,6 +140,21 @@ main { max-width: 880px; margin: 0 auto; padding: 0 20px 60px; }
 .sources li { padding: 6px 0; }
 .sources a { color: var(--blue); font-size: 0.9rem; }
 .sources a:hover { text-decoration: underline; }
+
+/* promise-drift strip */
+.drift { width: 100%; height: 60px; margin: 4px 0 16px; }
+.drift .axis { stroke: var(--border); stroke-width: 3; }
+.drift .today-tick { stroke: var(--text); stroke-width: 2; stroke-dasharray: 4 3; }
+.dot-start { fill: var(--muted); }
+.dot-missed { fill: var(--red); }
+.dot-target { fill: var(--accent); }
+.dot-done { fill: var(--green); }
+
+/* map */
+.mapsec { margin-top: 48px; }
+.mapsec h2 { font-size: 1.3rem; }
+#map { height: 420px; border: 1px solid var(--border); border-radius: 12px; margin-top: 12px; }
+.leaflet-container a { color: var(--blue); }
 
 /* footer */
 .site-footer {

@@ -1,0 +1,27 @@
+id: varthur-lake
+name: Varthur Lake Rejuvenation
+agency: BDA
+status: crawling
+started: "2017-04-01"
+started_approx: true
+location: { lat: 12.9400, lng: 77.7410 }
+promised:
+  - "2020-03-31"
+  - "2021-12-31"
+summary: >-
+  Bengaluru's second-largest lake, downstream of Bellandur and part of the
+  same NGT-ordered cleanup — with the same froth, the same desilting
+  backlog, and the same missed deadlines. Silt removal was still being
+  chased in official reviews in early 2026.
+notes:
+  - The NGT's directions covering Bellandur and Varthur set an early-2020
+    completion for desilting and rejuvenation, later extended to 2021.
+  - Fresh deadlines for desilting both lakes have been issued repeatedly.
+  - In February 2026, the Bengaluru East City Corporation commissioner
+    directed BDA to complete removal of all silt "on priority" — six years
+    past the original NGT deadline.
+sources:
+  - title: "Fresh deadline issued for desilting Bellandur and Varthur lakes (The News Minute)"
+    url: https://www.thenewsminute.com/article/fresh-deadline-issued-desilting-bellandur-and-varthur-lakes-bengaluru-116646
+  - title: "Bengaluru East City Corporation reviews Bellandur, Varthur lakes (Deccan Herald, Feb 2026)"
+    url: https://www.deccanherald.com/india/karnataka/bengaluru/bengaluru-east-city-corporation-reviews-bellandur-varthur-lakes-3894056

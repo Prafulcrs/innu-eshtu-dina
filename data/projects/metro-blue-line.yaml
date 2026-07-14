@@ -1,0 +1,27 @@
+id: metro-blue-line
+name: Namma Metro Blue Line (ORR–Airport)
+agency: BMRCL
+status: crawling
+started: "2022-01-01"
+started_approx: true
+location: { lat: 13.0070, lng: 77.6960 }
+promised:
+  - "2026-12-31"
+summary: >-
+  The 58 km ORR-and-airport corridor — Central Silk Board to KR Puram
+  (19.75 km, 13 stations) and on to Kempegowda International Airport
+  (38.44 km, 17 stations). In June 2023 the Deputy CM promised the airport
+  line by December 2026, "plus or minus 3 months". The airport stretch is
+  now expected in late 2027.
+notes:
+  - Phase 2A (Silk Board–KR Puram) is targeted to open first, around
+    September 2026.
+  - The airport section (Phase 2B) is expected in late 2027 — roughly a
+    year past the promised date.
+  - Until it opens, the ORR tech corridor — Bengaluru's worst traffic —
+    stays without mass transit.
+sources:
+  - title: "Blue Line (Namma Metro) — Wikipedia"
+    url: https://en.wikipedia.org/wiki/Blue_Line_(Namma_Metro)
+  - title: "Blue Line Metro Bangalore — route, stations and latest updates (KOTS)"
+    url: https://www.kots.world/blog/blue-line-metro-bangalore-route-map-stations-and-latest-updates

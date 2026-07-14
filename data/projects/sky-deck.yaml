@@ -4,6 +4,7 @@ agency: BDA / Govt of Karnataka
 status: stalled
 started: "2023-07-01"
 started_approx: true
+location: { lat: 12.9060, lng: 77.4750 }
 promised: []
 cost_sanctioned_cr: 500
 summary: >-

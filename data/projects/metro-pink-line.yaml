@@ -4,6 +4,7 @@ agency: BMRCL
 status: crawling
 started: "2017-01-01"
 started_approx: true
+location: { lat: 12.9698, lng: 77.6025 }
 promised:
   - "2021-12-31"
   - "2026-12-31"

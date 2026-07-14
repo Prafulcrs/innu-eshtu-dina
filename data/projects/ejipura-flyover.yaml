@@ -4,6 +4,7 @@ agency: BBMP / Greater Bengaluru Authority
 status: resumed
 started: "2017-05-01"
 started_approx: true
+location: { lat: 12.9357, lng: 77.6270 }
 promised:
   - "2019-05-01"
   - "2026-03-31"
